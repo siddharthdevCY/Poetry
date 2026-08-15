@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Poetry</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">POETRY</div>
+
+    <nav>
+        <button onclick="showPage('home')">Home</button>
+        <button onclick="showPage('profile')">Profile</button>
+        <button id="loginNav" onclick="showPage('login')">Login</button>
+        <button id="logoutBtn" onclick="logout()" style="display:none;">
+            Logout
+        </button>
+    </nav>
+</header>
+
+
+<main>
+
+    <!-- HOME -->
+    <section id="homePage">
+
+        <div class="create-box" id="createBox" style="display:none;">
+
+            <h2>Write a Poem</h2>
+
+            <textarea
+                id="poemText"
+                placeholder="Write your poem here..."
+            ></textarea>
+
+            <button onclick="createPost()">Publish</button>
+
+        </div>
+
+        <h1>Latest Poems</h1>
+
+        <div id="postsContainer">
+            Loading...
+        </div>
+
+    </section>
+
+
+    <!-- LOGIN -->
+    <section id="loginPage" class="page" style="display:none;">
+
+        <div class="auth-box">
+
+            <h1>Login</h1>
+
+            <input
+                type="email"
+                id="loginEmail"
+                placeholder="Email"
+            >
+
+            <input
+                type="password"
+                id="loginPassword"
+                placeholder="Password"
+            >
+
+            <button onclick="login()">Login</button>
+
+            <p>
+                Don't have an account?
+                <button onclick="showPage('signup')">
+                    Create Account
+                </button>
+            </p>
+
+            <p id="loginMessage"></p>
+
+        </div>
+
+    </section>
+
+
+    <!-- SIGNUP -->
+    <section id="signupPage" class="page" style="display:none;">
+
+        <div class="auth-box">
+
+            <h1>Create Account</h1>
+
+            <input
+                type="text"
+                id="signupName"
+                placeholder="Your Name"
+            >
+
+            <input
+                type="email"
+                id="signupEmail"
+                placeholder="Email"
+            >
+
+            <input
+                type="password"
+                id="signupPassword"
+                placeholder="Password"
+            >
+
+            <button onclick="signup()">Create Account</button>
+
+            <p>
+                Already have an account?
+                <button onclick="showPage('login')">
+                    Login
+                </button>
+            </p>
+
+            <p id="signupMessage"></p>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROFILE -->
+    <section id="profilePage" class="page" style="display:none;">
+
+        <div class="profile-box">
+
+            <h1>My Profile</h1>
+
+            <h2 id="profileName"></h2>
+
+            <p id="profileEmail"></p>
+
+        </div>
+
+        <h2>My Poems</h2>
+
+        <div id="myPosts"></div>
+
+    </section>
+
+</main>
+
+
+<script type="module" src="app.js"></script>
+
+</body>
+</html>
