@@ -302,7 +302,7 @@ window.createPost = async function() {
 
             authorId: currentUser.uid,
 
-            authorName: userData.name,
+           authorName: userData?.name || currentUser.displayName || "Anonymous",
 
             likedBy: [],
 
